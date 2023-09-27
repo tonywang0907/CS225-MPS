@@ -267,16 +267,13 @@ TEST_CASE("test_remove (2 child)", "[weight=5]"){
 TEST_CASE("test_listBuild 1", "[weight=5]"){
     std::vector<std::pair<std::string, int> >  nodes = file_to_listPair("../data/file1.txt");
 
-    BST<std::string, int> tree;
+    BST<std::string, int> tree = listBuild(nodes);
     std::set<std::string> temp;
-    for(size_t i = 0; i < nodes.size(); i++){
-        tree.insert(nodes[i].first,nodes[i].second);
+    for(size_t i = 0; i < nodes.size(); i++)
         temp.insert(nodes[i].first);
-    }
 
     std::vector<std::string> n2;
     n2.assign(temp.begin(), temp.end());
-    std::sort(n2.begin(), n2.end());
 
     match_walk(tree, n2);
 }
@@ -284,16 +281,13 @@ TEST_CASE("test_listBuild 1", "[weight=5]"){
 TEST_CASE("test_listBuild 2", "[weight=5]"){
     std::vector<std::pair<std::string, int> >  nodes = file_to_listPair("../data/file2.txt");
 
-    BST<std::string, int> tree;
+    BST<std::string, int> tree = listBuild(nodes);
     std::set<std::string> temp;
-    for(size_t i = 0; i < nodes.size(); i++){
-        tree.insert(nodes[i].first,nodes[i].second);
+    for(size_t i = 0; i < nodes.size(); i++)
         temp.insert(nodes[i].first);
-    }
 
     std::vector<std::string> n2;
     n2.assign(temp.begin(), temp.end());
-    std::sort(n2.begin(), n2.end());
 
     match_walk(tree, n2);
 }
@@ -301,16 +295,13 @@ TEST_CASE("test_listBuild 2", "[weight=5]"){
 TEST_CASE("test_listBuild 3", "[weight=5]"){
     std::vector<std::pair<std::string, int> >  nodes = file_to_listPair("../data/file3.txt");
 
-    BST<std::string, int> tree;
+    BST<std::string, int> tree = listBuild(nodes);
     std::set<std::string> temp;
-    for(size_t i = 0; i < nodes.size(); i++){
-        tree.insert(nodes[i].first,nodes[i].second);
+    for(size_t i = 0; i < nodes.size(); i++)
         temp.insert(nodes[i].first);
-    }
 
     std::vector<std::string> n2;
     n2.assign(temp.begin(), temp.end());
-    std::sort(n2.begin(), n2.end());
 
     match_walk(tree, n2);
 }
